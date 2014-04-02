@@ -2,6 +2,7 @@ class Lesson < ActiveRecord::Base
   validates :name, :presence => true
   validates :content, :presence => true
   validates :number, :uniqueness => true
+  belongs_to :section
 
   def next
     next_lesson = Lesson.all.detect { |lesson| lesson.number > self.number }

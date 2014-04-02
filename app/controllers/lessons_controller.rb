@@ -2,6 +2,7 @@ class LessonsController < ApplicationController
 
   def index
     @lessons = Lesson.all
+    @sections = Section.all
     render('lessons/index.html.erb')
   end
 

@@ -1,0 +1,24 @@
+<h2> Create New Section </h2>
+
+<% if @section.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @section.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+  <form action="/sections" method ="post">
+    <p><label for="section_name"> Name </label></p>
+    <textarea id="section_name" name="section[name]" type="text" rows="1" cols="40"><%=@section.name%></textarea>
+    <p><button>Create Section</button></p>
+  </form>
+
+
+<h3>Click a section below to update or delete</h3>
+<ul>
+<% Section.all.each do |section| %>
+  <li><a href="/sections/<%= section.id %>/edit"><%= section.name %></a></li>
+<% end %>
+</ul>
