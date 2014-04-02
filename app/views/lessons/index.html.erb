@@ -1,0 +1,6 @@
+<h2> Lessons </h2>
+<ul>
+  <% @lessons.each do |lesson| %>
+    <li> <a href="/lessons/<%=lesson.id%>"><%= lesson.number %> -- <%= lesson.name %> </a></li>
+  <% end %>
+</ul>
