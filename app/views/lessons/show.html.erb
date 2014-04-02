@@ -1,6 +1,6 @@
 <h2><%= @lesson.name %> </h2>
 
-<p><%= @lesson.content %></p>
+<p><%= @lesson.content.html_safe %></p>
 <% if @lesson.next %>
   <p><a href="/lessons/<%= @lesson.next.id %>">Next Lesson</a></p>
 <% end %>

@@ -4,6 +4,8 @@ class Lesson < ActiveRecord::Base
   validates :number, :uniqueness => true
   belongs_to :section
 
+  default_scope order('number ASC')
+
   def next
     next_lesson = Lesson.all.detect { |lesson| lesson.number > self.number }
   end

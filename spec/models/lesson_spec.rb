@@ -20,4 +20,12 @@ describe Lesson do
       current_lesson.previous.should eq previous_lesson
     end
   end
+  describe 'default scope' do
+    it "should display the lessons in the order of their number" do
+      lesson1 = Lesson.create({:name => 'hi', :number => 10, :content => "hello"})
+      lesson2 = Lesson.create({:name => 'hio', :number => 8, :content => "hello hello"})
+      lesson3 = Lesson.create({:name => 'hiyo',:number => 23, :content => "hellohi"})
+    Lesson.all.should eq [lesson2, lesson1, lesson3]
+    end
+  end
 end
