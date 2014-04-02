@@ -12,6 +12,12 @@
   <form action="/sections" method ="post">
     <p><label for="section_name"> Name </label></p>
     <textarea id="section_name" name="section[name]" type="text" rows="1" cols="40"><%=@section.name%></textarea>
+      <p><label for="section_chapter_id">Chapters</label></p>
+      <select id="section_chapter_id" name='section[chapter_id]'>
+      <% Chapter.all.each do |chapter|%>
+          <option value="<%= chapter.id %>"><%= chapter.name %></option>
+      <% end %>
+      </select>
     <p><button>Create Section</button></p>
   </form>
 

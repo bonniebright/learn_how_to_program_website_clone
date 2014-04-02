@@ -1,0 +1,24 @@
+<h2> Create New Chapter </h2>
+
+<% if @chapter.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @chapter.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+  <form action="/chapters" method ="post">
+    <p><label for="chapter_name"> Name </label></p>
+    <textarea id="chapter_name" name="chapter[name]" type="text" rows="1" cols="40"><%=@chapter.name%></textarea>
+      <p><button>Create Chapter</button></p>
+  </form>
+
+
+<h3>Click a chapter below to update or delete</h3>
+<ul>
+<% Chapter.all.each do |chapter| %>
+  <li><a href="/chapters/<%= chapter.id %>/edit"><%= chapter.name %></a></li>
+<% end %>
+</ul>

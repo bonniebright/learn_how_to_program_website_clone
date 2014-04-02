@@ -1,12 +1,19 @@
-<h2> Lessons </h2>
+<h2> Table of Contents </h2>
 <ul>
-  <% @sections.each do |section| %>
-    <p><li><strong> <%= section.name %> </li> </strong></p>
-     <% section.lessons.each do |lesson| %>
-      <ul> <a href="/lessons/<%=lesson.id%>"><%= lesson.name %> </a> </ul>
-      <% end %>
+  <% Chapter.all.each do |chapter| %>
+    <li> <%= chapter.name %> </li>
+    <ul>
+    <% chapter.sections.each do |section| %>
+      <li><%= section.name %></li>
+      <ul>
+        <% section.lessons.each do |lesson| %>
+          <li> <a href="/lessons/<%=lesson.id%>"><%= lesson.name %> </a> </li>
+        <% end %>
+      </ul>
     <% end %>
-<ul>
+    </ul>
+  <% end %>
+</ul>
 
 
 

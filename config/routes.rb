@@ -13,4 +13,10 @@ LearnToProgram::Application.routes.draw do
   match('sections/:id', {:via => [:patch, :put], :to => 'sections#update'})
   match('sections/:id', {:via => :delete, :to => 'sections#delete'})
 
+  match('chapters/new', {:via => :get, :to => 'chapters#new'})
+  match('chapters', {:via => :post, :to => 'chapters#create'})
+  match('chapters/:id/edit', {:via => :get, :to => 'chapters#edit'})
+  match('chapters/:id', {:via => [:patch, :put], :to => 'chapters#update'})
+  match('chapters/:id', {:via => :delete, :to => 'chapters#destroy'})
+
  end

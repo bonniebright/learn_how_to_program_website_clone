@@ -21,7 +21,6 @@ class SectionsController < ApplicationController
 
   def update
     @section = Section.find(params[:id])
-
     if @section.update(params[:section])
       redirect_to('/lessons')
     else

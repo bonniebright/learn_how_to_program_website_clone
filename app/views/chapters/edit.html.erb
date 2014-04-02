@@ -1,0 +1,22 @@
+<h2> Edit Chapter </h2>
+
+<% if @chapter.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @chapter.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+  <form action="/chapters/<%= @chapter.id %>" method ="post">
+     <input name="_method" type="hidden" value="patch">
+    <p><label for="chapter_name"> Name </label></p>
+    <input id="chapter_name" name="chapter[name]" type="text" value="<%=@chapter.name%>"></input>
+      <p><button>Update Chapter</button></p>
+  </form>
+<p><a  href="/chapters/<%= @chapter.id %>"
+      data-confirm = "you sure?"
+      data-method="delete"
+      rel="nofollow"><button>Delete Chapter</button></a></p>
+
