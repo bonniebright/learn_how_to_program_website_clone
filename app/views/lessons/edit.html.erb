@@ -19,4 +19,7 @@
     <input id="lesson_number" name="lesson[number]" type="integer" value ="<%= @lesson.number %>">
     <p><button>Update Lesson</button></p>
   </form>
-  <a href="/lessons/<%= @lesson.id %>" data-confirm = "you sure?" data-method="delete" rel="nofollow"><button>Delete Lesson</button></a>
+  <a  href="/lessons/<%= @lesson.id %>"
+      data-confirm = "you sure?"
+      data-method="delete"
+      rel="nofollow"><button>Delete Lesson</button></a>

@@ -1,7 +1,10 @@
 <h2><%= @lesson.name %> </h2>
 
 <p><%= @lesson.content %></p>
-
-<p><a href="">Next Lesson</a></p>
-<p><a href="">Previous Lesson</a></p>
+<% if @lesson.next %>
+  <p><a href="/lessons/<%= @lesson.next.id %>">Next Lesson</a></p>
+<% end %>
+<% if @lesson.previous %>
+  <p><a href="/lessons/<%= @lesson.previous.id %>">Previous Lesson</a></p>
+<% end %>
 <p><a href="/lessons">Table of Contents</a></p>
