@@ -13,4 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require twitter/bootstrap
 //= require_tree .
+
+$(function() {
+  $('.archive_section ul').hide();
+
+  $('.sections').click(function() {
+      $(this).find('ul').slideToggle();
+  });
+});
+

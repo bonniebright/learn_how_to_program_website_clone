@@ -8,6 +8,50 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require twitter/bootstrap
  *= require_self
  *= require_tree .
  */
+
+
+h1, h2, h3 {
+  padding-left: 20px;
+margin: 10px 0;
+font-family: "Josefin Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+font-weight: bold;
+line-height: 20px;
+color: inherit;
+text-rendering: optimizelegibility;
+
+}
+
+h1 {
+  display: block;
+  -webkit-margin-before: 0.67em;
+  -webkit-margin-after: 0.67em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+a {
+  color: #CA4251;
+}
+body {
+  margin: 0;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555555;
+  background-color: #f7f7f7;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  display: block;
+}
+
+a:hover {
+  color: #762830;
+}
+
+footer {
+  text-align: center;
+
+}

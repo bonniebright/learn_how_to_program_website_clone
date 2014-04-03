@@ -6,11 +6,19 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<h1>Learn How To Program</h1>
 <body>
 
 <%= yield %>
 
 </body>
+<div class="navbar navbar-fixed-bottom">
+  <div class="navbar-inner">
+    <ul class="nav pull-right">
+      <li>
+        <a href="/lessons">Table of Contents</a>
+      </li>
+    </ul>
+  </div>
+</div>
 <footer><br><br>© 2014 Epicodus, Inc</footer>
 </html>
